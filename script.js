@@ -24,7 +24,7 @@ var generatePassword = function() {
     // WHEN I answer each prompt
     // THEN my input should be validated and at least one character type should be selected
     var finalArray = []
-    
+    //selecting and concatenating which options from the prompt to use
     if(lowerBool && !upperBool && !numBool && !specBool){
       
       finalArray = lowercaseArray;
@@ -95,14 +95,18 @@ var generatePassword = function() {
       finalArray = lowercaseArray.concat(uppercaseArray, numArray, specArray);
       return finalArray;
 
-    } else(!lowerBool && !upperBool && !numBool && !specBool){
+    } else if (!lowerBool && !upperBool && !numBool && !specBool){ //making sure function exits if wrong selections made
       alert("Please select one option for character types");
       return null;
     }
-    for (var i = 0; i <= passLengthl; i++) {
-
+    //for loop to make the final password
+    password = ""
+    for (var i = 0; i <= passLength; i++) {
+      var randomNumber = Math.floor(Math.random() * finalArray.length);
+      password += finalArrayString.substring(randomNumber, randomNumber +1);
+      return finalPassword;
     }
-
+    return finalPassword;
   } else {
      alert("Password must be at least 8 characters and less than 128 characters");
      return null;
