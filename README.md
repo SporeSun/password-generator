@@ -15,6 +15,8 @@ n/a, runs in browser
 
 Click the generate button on the splash page, follow the prompts, selecting at least one set of characters and making sure your password is 8-128 characters in length. Password will be sent to the splash page after completion.
 
+https://sporesun.github.io/password-generator/
+
 ## Credits
 
 - AskBCS
