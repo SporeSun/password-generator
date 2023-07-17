@@ -86,12 +86,19 @@ var generatePassword = function() {
       return null;
     }
     //for loop to make the final password
-    password = ""
-    for (var i = 0; i <= passLength; i++) {
-      var finalArrayString = finalArray.toString();
-      var randomNumber = Math.floor(Math.random() * finalArrayString.length);
-      password += finalArrayString.substring(randomNumber, randomNumber +1);
+    var password = [];
+    function randomizer(array){
+      var randomNumber = Math.floor(Math.random() * array.length);
+      var randElement = array[randomNumber];
+      return randElement
     }
+
+
+    for (var i = 0; i <= passLength; i++) {
+      var character = randomizer(finalArray);
+      password.push(character);
+    }
+    password = password.join("")
     return password;
   } else {
      alert("Password must be at least 8 characters and less than 128 characters");
